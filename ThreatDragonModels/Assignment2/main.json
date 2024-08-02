@@ -2562,9 +2562,597 @@
           }
         ],
         "description": "Stride diagram for reporting of a found dog"
+      },
+      {
+        "id": 4,
+        "title": "1.2 Declare a lost dog",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.2.0",
+        "cells": [
+          {
+            "position": {
+              "x": 360,
+              "y": 70
+            },
+            "size": {
+              "width": 270,
+              "height": 170
+            },
+            "shape": "trust-boundary-box",
+            "attrs": {
+              "headerText": {
+                "text": "Secure Email Provider Infrastructure"
+              }
+            },
+            "zIndex": -1,
+            "id": "f73ec46b-1803-4659-a803-b34083b10426",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Secure Email Provider Infrastructure",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 700,
+              "y": 240
+            },
+            "size": {
+              "width": 460,
+              "height": 250
+            },
+            "shape": "trust-boundary-box",
+            "attrs": {
+              "headerText": {
+                "text": "Secure Council Infrastructure"
+              }
+            },
+            "zIndex": -1,
+            "id": "4eaf1b1e-1b32-4873-b681-12e43150b03c",
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Secure Council Infrastructure",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 390,
+              "y": 365.00000000000006
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Dog Owner"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "zIndex": 1,
+            "id": "cfb54d66-7fba-401c-a3b1-c3ccf93ebf07",
+            "data": {
+              "type": "tm.Actor",
+              "name": "Dog Owner",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 750,
+              "y": 335.00000000000006
+            },
+            "size": {
+              "width": 100,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Report Lost \nDog"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 2,
+            "id": "56d8f0d3-157d-413c-8554-056dede9b8db",
+            "data": {
+              "type": "tm.Process",
+              "name": "Report Lost \nDog",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 445,
+              "y": 110
+            },
+            "size": {
+              "width": 100,
+              "height": 90
+            },
+            "attrs": {
+              "text": {
+                "text": "Send Email"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "process",
+            "zIndex": 3,
+            "id": "43158520-832f-4e46-b50f-a764c21cda39",
+            "data": {
+              "type": "tm.Process",
+              "name": "Send Email",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "handlesCardPayment": false,
+              "handlesGoodsOrServices": false,
+              "isWebApplication": false,
+              "privilegeLevel": "",
+              "threats": []
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Email Address",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "cf93ea7e-c2dc-43b1-85aa-c8630caf434e",
+            "labels": [
+              "Email Address"
+            ],
+            "source": {
+              "cell": "cfb54d66-7fba-401c-a3b1-c3ccf93ebf07"
+            },
+            "target": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "vertices": [
+              {
+                "x": 620,
+                "y": 330
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Dog Name",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "159b5a8a-fd25-4775-869a-e31b6aca2d34",
+            "labels": [
+              "Dog Name"
+            ],
+            "source": {
+              "cell": "cfb54d66-7fba-401c-a3b1-c3ccf93ebf07"
+            },
+            "target": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "vertices": [
+              {
+                "x": 630,
+                "y": 384.5
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Dog Tag ID",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "dc554a6f-13bd-45ce-a238-5cdf80100b41",
+            "labels": [
+              "Dog Tag ID"
+            ],
+            "source": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "target": {
+              "cell": "43158520-832f-4e46-b50f-a764c21cda39"
+            },
+            "vertices": [
+              {
+                "x": 700,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "New Dog Status",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "e5a83491-c1a2-49f9-ab5b-caeeb1f1a35b",
+            "labels": [
+              "New Dog Status"
+            ],
+            "source": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "target": {
+              "cell": "43158520-832f-4e46-b50f-a764c21cda39"
+            },
+            "vertices": [
+              {
+                "x": 590,
+                "y": 240
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Confirmation\nEmail",
+              "description": "An email indicating that the dog has been declared lost, with the dog tag ID included in the email.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "e7892e4f-78fd-4b52-bb2e-16287a8105ad",
+            "labels": [
+              "Confirmation\nEmail"
+            ],
+            "source": {
+              "cell": "43158520-832f-4e46-b50f-a764c21cda39"
+            },
+            "target": {
+              "cell": "cfb54d66-7fba-401c-a3b1-c3ccf93ebf07"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Confirmation\nWebpage",
+              "description": "Webpage indicating that the dog has been declared lost, with the dog tag ID being displayed.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "a61ef6be-f68d-4aba-a232-8dc2486a675c",
+            "labels": [
+              "Confirmation\nWebpage"
+            ],
+            "source": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "target": {
+              "cell": "cfb54d66-7fba-401c-a3b1-c3ccf93ebf07"
+            },
+            "vertices": [
+              {
+                "x": 670,
+                "y": 440
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Dog Status",
+              "description": "Passes the new \"lost\" dog status.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "0601a3e6-00b5-4d6e-a6c3-29f1d989370c",
+            "labels": [
+              "Dog Status"
+            ],
+            "source": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "target": {
+              "cell": "f13f761e-b2fd-4a96-8760-72292fcc9274"
+            },
+            "vertices": [
+              {
+                "x": 920,
+                "y": 340
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Dog Tag ID",
+              "description": "Returns the dog tag ID from the dog name.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "21169a2e-6f44-4464-af4c-f05f720df1b4",
+            "labels": [
+              "Dog Tag ID"
+            ],
+            "source": {
+              "cell": "f13f761e-b2fd-4a96-8760-72292fcc9274"
+            },
+            "target": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "vertices": [
+              {
+                "x": 930,
+                "y": 410
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 992,
+              "y": 350.00000000000006
+            },
+            "size": {
+              "width": 120,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Dog Datastore"
+              },
+              "topLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "store",
+            "zIndex": 11,
+            "id": "f13f761e-b2fd-4a96-8760-72292fcc9274",
+            "data": {
+              "type": "tm.Store",
+              "name": "Dog Datastore",
+              "description": "",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isALog": false,
+              "isEncrypted": false,
+              "isSigned": false,
+              "storesCredentials": false,
+              "storesInventory": false,
+              "threats": []
+            }
+          }
+        ],
+        "description": "Diagram for declaring a lost dog"
       }
     ],
-    "diagramTop": 3,
+    "diagramTop": 4,
     "reviewer": "",
     "threatTop": 0
   }
