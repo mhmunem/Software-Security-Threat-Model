@@ -120,8 +120,8 @@
                 "text": "Secure dog services infrastructure"
               }
             },
-            "id": "a754ecd4-a781-4e13-836c-f1405e203bf2",
             "zIndex": -1,
+            "id": "a754ecd4-a781-4e13-836c-f1405e203bf2",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Secure dog services infrastructure",
@@ -452,6 +452,9 @@
               "threats": []
             },
             "id": "c1d3d502-3e5d-4c9a-944c-74a71a6d6f9f",
+            "labels": [
+              "Renewal details"
+            ],
             "source": {
               "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
             },
@@ -463,9 +466,6 @@
                 "x": 720,
                 "y": 220
               }
-            ],
-            "labels": [
-              "Renewal details"
             ]
           },
           {
@@ -500,6 +500,9 @@
               "threats": []
             },
             "id": "bf6abf27-7d17-4a92-8aff-ce4da14247f5",
+            "labels": [
+              "Renewal confirmation"
+            ],
             "source": {
               "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
             },
@@ -511,9 +514,6 @@
                 "x": 710,
                 "y": 250
               }
-            ],
-            "labels": [
-              "Renewal confirmation"
             ]
           },
           {
@@ -548,6 +548,9 @@
               "threats": []
             },
             "id": "bf19851d-4ccb-4b8d-a60c-78daac9614d3",
+            "labels": [
+              "New dog tag ID"
+            ],
             "source": {
               "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
             },
@@ -559,9 +562,6 @@
                 "x": 780,
                 "y": 680
               }
-            ],
-            "labels": [
-              "New dog tag ID"
             ]
           },
           {
@@ -644,6 +644,9 @@
               "threats": []
             },
             "id": "ea720d13-9c60-444d-aa38-8b782c7a2c86",
+            "labels": [
+              "Payment confirmation"
+            ],
             "source": {
               "cell": "d87e97b6-3ef7-4c08-a987-1d037df724e1"
             },
@@ -655,9 +658,6 @@
                 "x": 680,
                 "y": 550
               }
-            ],
-            "labels": [
-              "Payment confirmation"
             ]
           },
           {
@@ -692,15 +692,15 @@
               "threats": []
             },
             "id": "ad72f6c6-104f-4992-b22c-8cac708f05bc",
+            "labels": [
+              "New dog tag ID"
+            ],
             "source": {
               "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
             },
             "target": {
               "cell": "06f6d889-42df-44e5-9d3f-7a4629dfb823"
             },
-            "labels": [
-              "New dog tag ID"
-            ],
             "vertices": []
           },
           {
@@ -735,15 +735,15 @@
               "threats": []
             },
             "id": "1699062e-1b94-4af6-99b2-75d5dec5b6a7",
+            "labels": [
+              "Email address"
+            ],
             "source": {
               "cell": "81d3abf0-34a4-4ca5-91d8-d096a577e6b4"
             },
             "target": {
               "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
             },
-            "labels": [
-              "Email address"
-            ],
             "vertices": [
               {
                 "x": 1210,
@@ -927,15 +927,15 @@
               "threats": []
             },
             "id": "0aa5160a-b4d6-4d84-9561-5f770d8e670d",
+            "labels": [
+              "Confirmation webpage"
+            ],
             "source": {
               "cell": "c39a36a0-3fc0-4570-8ac4-5b28dd54d6fc"
             },
             "target": {
               "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
             },
-            "labels": [
-              "Confirmation webpage"
-            ],
             "vertices": [
               {
                 "x": 640,
@@ -975,6 +975,9 @@
               "threats": []
             },
             "id": "a2b59f88-64c7-488c-b269-6134504cd918",
+            "labels": [
+              "Report data"
+            ],
             "source": {
               "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
             },
@@ -986,9 +989,6 @@
                 "x": 680,
                 "y": 400
               }
-            ],
-            "labels": [
-              "Report data"
             ]
           },
           {
@@ -1023,6 +1023,9 @@
               "threats": []
             },
             "id": "2eaa4dca-6d9c-4404-895c-da91caa3d1b7",
+            "labels": [
+              "Email"
+            ],
             "source": {
               "cell": "c39a36a0-3fc0-4570-8ac4-5b28dd54d6fc"
             },
@@ -1038,9 +1041,6 @@
                 "x": 800,
                 "y": -20
               }
-            ],
-            "labels": [
-              "Email"
             ]
           },
           {
@@ -1075,6 +1075,9 @@
               "threats": []
             },
             "id": "7ab75323-d0d4-4e2a-a617-e01dc903226f",
+            "labels": [
+              "Dog tag ID"
+            ],
             "source": {
               "cell": "06f6d889-42df-44e5-9d3f-7a4629dfb823"
             },
@@ -1086,9 +1089,6 @@
                 "x": 1200,
                 "y": 520
               }
-            ],
-            "labels": [
-              "Dog tag ID"
             ]
           },
           {
@@ -1123,15 +1123,15 @@
               "threats": []
             },
             "id": "79d62c7c-8e8f-4984-878e-0542b290c7c3",
+            "labels": [
+              "Found dog details"
+            ],
             "source": {
               "cell": "ce5c8d88-6a1e-4c60-99cc-92513e98405e"
             },
             "target": {
               "cell": "fbe1641b-f653-4ec8-a007-8fcb871fbe56"
-            },
-            "labels": [
-              "Found dog details"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -1165,15 +1165,15 @@
               "threats": []
             },
             "id": "d8965aab-e7d6-4aa8-945c-bc363dac0da4",
+            "labels": [
+              "Found dog details"
+            ],
             "source": {
               "cell": "fbe1641b-f653-4ec8-a007-8fcb871fbe56"
             },
             "target": {
               "cell": "110fb507-6804-4ea7-8c4a-2e525a224b4e"
-            },
-            "labels": [
-              "Found dog details"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -1250,15 +1250,15 @@
               "threats": []
             },
             "id": "c621c61d-6eeb-4e43-a347-07fae7b23587",
+            "labels": [
+              "Email"
+            ],
             "source": {
               "cell": "fbe1641b-f653-4ec8-a007-8fcb871fbe56"
             },
             "target": {
               "cell": "80fa7fb3-77c5-453f-b8b3-b69cedda7359"
             },
-            "labels": [
-              "Email"
-            ],
             "vertices": [
               {
                 "x": 770,
@@ -1298,6 +1298,9 @@
               "threats": []
             },
             "id": "6e090126-868d-44cb-971d-512a773c808c",
+            "labels": [
+              "Dog details"
+            ],
             "source": {
               "cell": "31a445fb-f779-4541-9b86-b6fed369331b"
             },
@@ -1309,9 +1312,6 @@
                 "x": 1170,
                 "y": 150
               }
-            ],
-            "labels": [
-              "Dog details"
             ]
           },
           {
@@ -1346,6 +1346,9 @@
               "threats": []
             },
             "id": "19a72ab7-df46-48c8-a752-12a1fcc6f305",
+            "labels": [
+              "Dog status"
+            ],
             "source": {
               "cell": "fbe1641b-f653-4ec8-a007-8fcb871fbe56"
             },
@@ -1357,9 +1360,6 @@
                 "x": 1200,
                 "y": 10
               }
-            ],
-            "labels": [
-              "Dog status"
             ]
           },
           {
@@ -1394,15 +1394,15 @@
               "threats": []
             },
             "id": "7fad4775-4001-4e0a-bd44-78a02250b90c",
+            "labels": [
+              "Dog status"
+            ],
             "source": {
               "cell": "c39a36a0-3fc0-4570-8ac4-5b28dd54d6fc"
             },
             "target": {
               "cell": "06f6d889-42df-44e5-9d3f-7a4629dfb823"
             },
-            "labels": [
-              "Dog status"
-            ],
             "vertices": [
               {
                 "x": 1110,
@@ -1442,15 +1442,15 @@
               "threats": []
             },
             "id": "be112c97-cef7-4348-b04c-f32f15c1cdb4",
+            "labels": [
+              "Email address"
+            ],
             "source": {
               "cell": "81d3abf0-34a4-4ca5-91d8-d096a577e6b4"
             },
             "target": {
               "cell": "fbe1641b-f653-4ec8-a007-8fcb871fbe56"
             },
-            "labels": [
-              "Email address"
-            ],
             "vertices": [
               {
                 "x": 1170,
@@ -1472,6 +1472,9 @@
               "hasOpenThreats": false
             },
             "id": "73e35531-6c18-40b3-be06-94b8687aa41e",
+            "labels": [
+              "Secure council infrastructure"
+            ],
             "source": {
               "x": 770,
               "y": -480
@@ -1480,10 +1483,7 @@
               "x": 770,
               "y": 930
             },
-            "vertices": [],
-            "labels": [
-              "Secure council infrastructure"
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1517,15 +1517,15 @@
               "threats": []
             },
             "id": "a5e4f90e-00f1-4337-b792-1734e67585e8",
+            "labels": [
+              "Termination details"
+            ],
             "source": {
               "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
             },
             "target": {
               "cell": "31a445fb-f779-4541-9b86-b6fed369331b"
             },
-            "labels": [
-              "Termination details"
-            ],
             "vertices": [
               {
                 "x": 690,
@@ -1613,6 +1613,9 @@
               "threats": []
             },
             "id": "c8f837e3-6e1e-43cc-8862-3726057714c9",
+            "labels": [
+              "Email"
+            ],
             "source": {
               "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
             },
@@ -1628,9 +1631,6 @@
                 "x": 800,
                 "y": -80
               }
-            ],
-            "labels": [
-              "Email"
             ]
           },
           {
@@ -1665,6 +1665,9 @@
               "threats": []
             },
             "id": "5c3a942f-b092-4ef3-8cb9-b1e0d09480ca",
+            "labels": [
+              "Email"
+            ],
             "source": {
               "cell": "31a445fb-f779-4541-9b86-b6fed369331b"
             },
@@ -1676,9 +1679,6 @@
                 "x": 800,
                 "y": -170
               }
-            ],
-            "labels": [
-              "Email"
             ]
           },
           {
@@ -1816,7 +1816,7 @@
             },
             "attrs": {
               "text": {
-                "text": "Send invoice \nemail"
+                "text": "Send email"
               },
               "body": {
                 "stroke": "#333333",
@@ -1830,7 +1830,7 @@
             "id": "80fa7fb3-77c5-453f-b8b3-b69cedda7359",
             "data": {
               "type": "tm.Process",
-              "name": "Send invoice \nemail",
+              "name": "Send email",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -1937,8 +1937,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "6c5f84e6-d201-4f68-89da-e3e4291a6100",
             "zIndex": 17,
+            "id": "6c5f84e6-d201-4f68-89da-e3e4291a6100",
             "data": {
               "type": "tm.Process",
               "name": "Renew dog \nregistration",
@@ -1974,8 +1974,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "31a445fb-f779-4541-9b86-b6fed369331b",
             "zIndex": 18,
+            "id": "31a445fb-f779-4541-9b86-b6fed369331b",
             "data": {
               "type": "tm.Process",
               "name": "Terminate a\n registration",
@@ -2051,8 +2051,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "c39a36a0-3fc0-4570-8ac4-5b28dd54d6fc",
             "zIndex": 19,
+            "id": "c39a36a0-3fc0-4570-8ac4-5b28dd54d6fc",
             "data": {
               "type": "tm.Process",
               "name": "Report lost \ndog",
@@ -2088,8 +2088,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "fbe1641b-f653-4ec8-a007-8fcb871fbe56",
             "zIndex": 20,
+            "id": "fbe1641b-f653-4ec8-a007-8fcb871fbe56",
             "data": {
               "type": "tm.Process",
               "name": "Report found \ndog",
@@ -2125,8 +2125,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "ce5c8d88-6a1e-4c60-99cc-92513e98405e",
             "zIndex": 21,
+            "id": "ce5c8d88-6a1e-4c60-99cc-92513e98405e",
             "data": {
               "type": "tm.Actor",
               "name": "Member of \nthe public",
@@ -2159,8 +2159,8 @@
             },
             "visible": true,
             "shape": "process",
-            "id": "110fb507-6804-4ea7-8c4a-2e525a224b4e",
             "zIndex": 22,
+            "id": "110fb507-6804-4ea7-8c4a-2e525a224b4e",
             "data": {
               "type": "tm.Process",
               "name": "Pick up \nfound dog",
