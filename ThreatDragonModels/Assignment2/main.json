@@ -3895,8 +3895,8 @@
                 "text": "Dog Owner"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3910,22 +3910,9 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": [
-                {
-                  "id": "1f079db6-7ae2-49e5-8b9a-76820c32cb38",
-                  "title": "Stolen credentials",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Spoofing",
-                  "description": "Credentials of the dog owner (e.g., email address and dog's name) can be stolen or guessed.",
-                  "mitigation": "* Verify email address during report process. When a report is submitted, a verification link or code should be sent to the email address provided. which the user must click or enter on the website to confirm the report\n* Require additional information to identify the dog owner, such as the dog tag ID or unique registration number\n* Flag multiple lost dog reports coming from the same IP address",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 5,
-                  "score": ""
-                },
                 {
                   "id": "f5d3b5fb-ffab-49b6-9726-817008fd0661",
                   "title": "Denial of lost dog report",
@@ -3983,11 +3970,76 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "Credentials of the dog owner (e.g., email address and dog's name) can be stolen or guessed.",
+                  "description": "Attackers may impersonate the dog owner if they know their email address and the dog's name. This can lead to false reports.",
                   "mitigation": "* Verify email address during report process. When a report is submitted, a verification link or code should be sent to the email address provided. which the user must click or enter on the website to confirm the report\n* Require additional information to identify the dog owner, such as the dog tag ID or unique registration number\n* Flag multiple lost dog reports coming from the same IP address",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 1,
+                  "score": ""
+                },
+                {
+                  "id": "207691c2-dc97-44e9-a71f-fb44b8c7976d",
+                  "title": "False information insertion",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers could gain unauthorised access and alter the way the report is handled or to insert false information.",
+                  "mitigation": "* Apply security patches\n* Secure the process logic\n* Implement strong input validation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 29,
+                  "score": ""
+                },
+                {
+                  "id": "668e7e37-1e47-4c72-b3a6-655fa84750e1",
+                  "title": "Information leakage during report",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Sensitive information such as the dog owner's email and the dog's name could be leaked.",
+                  "mitigation": "* Ensure that sensitive information is accessible only to authorised users and processes\n* Encrypt data at rest and in use within the process to prevent unauthorised disclosure\n* Prevent unauthorised execution or access to the process that could expose sensitive information",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 30,
+                  "score": ""
+                },
+                {
+                  "id": "fdee8bd9-87ad-44a7-b3e1-5f75d62d654a",
+                  "title": "Exploitation of privilege escalation",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "Attackers could exploit vulnerabilities in the process to gain unauthorised access to elevated privileges, potentially allowing them to alter or delete reports or access other restricted functions.",
+                  "mitigation": "* Restrict the user of privileged accounts and enforce the principle of least privilege\n* Regularly scan for and patch vulnerabilities that could be exploited for privilege escalation",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 33,
+                  "score": ""
+                },
+                {
+                  "id": "faaab6b8-aff4-494f-bfc3-f1c1a7f44008",
+                  "title": "Overload request",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Attackers could overload the process by sending a large number of fake or malicious requests, leading to a denial of service that prevents legitimate users from reporting lost dogs.",
+                  "mitigation": "* Implement rate limiting to prevent DoS attacks\n* Ensure that backups are available to restore normal operations quickly\n* Monitor for unusual spikes in traffic and automatically block suspicious activity",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 32,
+                  "score": ""
+                },
+                {
+                  "id": "a3f3f90f-8433-4451-946b-aef09531748f",
+                  "title": "Malformed data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Attackers could pass through specially crafted malformed data to crash the system.",
+                  "mitigation": "* Implement strong input validation and handle unexpected data types\n* Ensure that a backup mechanism is in place to quickly restore service \n* Monitor data submissions for signs of DoS attempts in malformed data",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 40,
                   "score": ""
                 }
               ]
@@ -4007,8 +4059,8 @@
                 "text": "Send Email"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -4022,12 +4074,91 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "d4f99895-bdac-44cc-b7ef-eebac10405a5",
+                  "title": "Fake confirmation email",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Attackers could spoof the confirmation email and the dog owners may receive fake confirmation emails, leading to confusion and potential security breaches. ",
+                  "mitigation": "* Include specific information in the email that only the council would know (e.g., registration number)\n* Use domain-based email authentication protocols like SPF, DKIM, and DMARC",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                },
+                {
+                  "id": "d3a7a64e-164d-45f9-a8fa-d0fb7e9912dc",
+                  "title": "Phishing via email",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "Attackers could send a fake email to get the dog owner to click on a malicious link or provide sensitive information",
+                  "mitigation": "* Include warnings in legitimate emails about phishing threats and provide a secure method for users to report suspicious emails\n* Use domain-based email authentication protocols like SPF, DKIM, and DMARC\n* Only include secure links with HTTPS ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                },
+                {
+                  "id": "d67823e8-35b5-43a3-8feb-2cd0e1446765",
+                  "title": "Tampering with email template",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers could gain unauthorised access and change the email template or insert malicious links into the content. ",
+                  "mitigation": "* Digitally sign emails to ensure the integrity of the content\n* Use secure templates that cannot be easily modified by unauthorised users or processes",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 21,
+                  "score": ""
+                },
+                {
+                  "id": "5e0bf62c-f0e2-47fb-8c56-446284182595",
+                  "title": "Denial of email service",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Attackers send a high volume of data or specially crafted requests to cause it to fail.",
+                  "mitigation": "* Control the rate of requests and filter and block suspicious or excessive traffic\n* Implement failover mechanisms to maintain service availability\n* Implement strict validation of all incoming data \n* Distribute the load of requests across multiple servers or instances to balance load\n* Slow down or limit the processing of requests during high traffic periods ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 22,
+                  "score": ""
+                },
+                {
+                  "id": "f5297bbe-993e-4bc1-9166-e1b644d67749",
+                  "title": "Email information leakage",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Sensitive information stored in plaintext or fails to protect the email content before sending it",
+                  "mitigation": "* Encrypt sensitive information\n* Securely manage logs",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 23,
+                  "score": ""
+                },
+                {
+                  "id": "786d9788-1140-4095-90e8-734643a992e8",
+                  "title": "Denial of receipt",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Dog owners might deny having received an email.",
+                  "mitigation": "* Use delivery and read receipts to track when emails are delivered and opened by the recipient\n* Store confirmation of receipt in the system logs ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 25,
+                  "score": ""
+                }
+              ]
             }
           },
           {
@@ -4050,8 +4181,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Dog Tag ID",
-              "description": "",
+              "name": "Confirmation\nEmail",
+              "description": "An email indicating that the dog has been declared lost, with the dog tag ID included in the email.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -4059,24 +4190,45 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "0e958a21-d01d-42db-80f0-58a1ca7714f2",
+                  "title": "Altering confirmation email data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers could intercept and alter the confirmation email in transit, causing confusion or unintended actions from the dog owner.",
+                  "mitigation": "* Use TLS to encrypt the email content in transit\n* Implement digital signatures (e.g., DKIM) for emails\n* Monitor and log email transmissions",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 47,
+                  "score": ""
+                },
+                {
+                  "id": "af9a0aae-5db4-4dc5-a796-9a75adfb21e6",
+                  "title": "Interception of confirmation email",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Attackers could intercept the confirmation email and gain sensitive information such as the dog tag ID and the dog owner's email address.",
+                  "mitigation": "* Encrypt the email content using TLS\n* Secure and isolate the network paths used to transmit the confirmation email\n* Implement email authentication protocols (e.g., SPF, DKIM, DMARC)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 48,
+                  "score": ""
+                }
+              ]
             },
-            "id": "dc554a6f-13bd-45ce-a238-5cdf80100b41",
+            "id": "e7892e4f-78fd-4b52-bb2e-16287a8105ad",
             "labels": [
-              "Dog Tag ID"
+              "Confirmation\nEmail"
             ],
             "source": {
-              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
-            },
-            "target": {
               "cell": "43158520-832f-4e46-b50f-a764c21cda39"
             },
-            "vertices": [
-              {
-                "x": 700,
-                "y": 220
-              }
-            ]
+            "target": {
+              "cell": "cfb54d66-7fba-401c-a3b1-c3ccf93ebf07"
+            }
           },
           {
             "shape": "flow",
@@ -4098,7 +4250,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "New Dog Status",
+              "name": "Email ",
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
@@ -4107,11 +4259,38 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "18fcd68d-32da-4bea-b98c-f14721fe587e",
+                  "title": "Tampering with email data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers could intercept and alter the content of the email before it is sent to the email provider, leading to false information being sent to the dog owner.",
+                  "mitigation": "* Use TLS to encrypt the data in transit\n* Implement data integrity checks (e.g., HMAC) to ensure that the data sent has not been altered",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 44,
+                  "score": ""
+                },
+                {
+                  "id": "92aa701c-bd7b-4519-90aa-e2880629945b",
+                  "title": "Data interception on email transmission",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Sensitive information being transmitted to the email provider could be intercepted by an attacker, revealing the dog owner's email, dog tag ID, and dog's status.",
+                  "mitigation": "* Encrypt the data in transit using TLS\n* Secure and isolate the network paths used to transmit sensitive data\n* Ensure that access to the data flow is restricted to authorised processes and users only",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 45,
+                  "score": ""
+                }
+              ]
             },
             "id": "e5a83491-c1a2-49f9-ab5b-caeeb1f1a35b",
             "labels": [
-              "New Dog Status"
+              "Email "
             ],
             "source": {
               "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
@@ -4146,102 +4325,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Dog Status",
-              "description": "Passes the new \"lost\" dog status.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "0601a3e6-00b5-4d6e-a6c3-29f1d989370c",
-            "labels": [
-              "Dog Status"
-            ],
-            "source": {
-              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
-            },
-            "target": {
-              "cell": "f13f761e-b2fd-4a96-8760-72292fcc9274"
-            },
-            "vertices": [
-              {
-                "x": 920,
-                "y": 340
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Dog Tag ID",
-              "description": "Returns the dog tag ID from the dog name.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "21169a2e-6f44-4464-af4c-f05f720df1b4",
-            "labels": [
-              "Dog Tag ID"
-            ],
-            "source": {
-              "cell": "f13f761e-b2fd-4a96-8760-72292fcc9274"
-            },
-            "target": {
-              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
-            },
-            "vertices": [
-              {
-                "x": 930,
-                "y": 410
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Report Data",
               "description": "This data contains:\n  * email address used to register the dog\n  * dog's name",
               "outOfScope": false,
@@ -4251,7 +4334,34 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "c23639be-7f97-4793-a167-03794e52a32a",
+                  "title": "Tampering with reported data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers could intercept and alter the data, leading to false information being recorded.",
+                  "mitigation": "* Encrypt data in transit using TLS\n* Implement data integrity checks (e.g., HMAC) to ensure that the data has not been altered during transmission\n* Log and monitor all data transmissions to detect and respond to any tampering attempts",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 34,
+                  "score": ""
+                },
+                {
+                  "id": "be393c6d-e4db-4c39-b8c2-2093e79d2f21",
+                  "title": "Data interception on report data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Sensitive information, such as the dog owner's email address and the dog's name could be intercepted during transmission",
+                  "mitigation": "* Encrypt data during transmission\n* Isolate the communication channels used for transmitting sensitive data\n* Implement secure communication channels ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 35,
+                  "score": ""
+                }
+              ]
             },
             "id": "159b5a8a-fd25-4775-869a-e31b6aca2d34",
             "labels": [
@@ -4299,7 +4409,34 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "5e80aa99-03c6-4fc9-856e-3c28d4732602",
+                  "title": "False information display",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers alter the dog tag ID displayed to the user, causing confusion to the user.",
+                  "mitigation": "* Use TLS to secure the data flow\n* Implement strong output encoding",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 41,
+                  "score": ""
+                },
+                {
+                  "id": "bcf93473-c34a-473d-861e-200614f01a44",
+                  "title": "Data interception on confirmation page",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Attackers could intercept the data and gain access to the dog tag ID and potentially other sensitive information.",
+                  "mitigation": "* Encrypt the data in transit using TLS\n* Ensure that only authorised users can access the webpage\n* Isolate and secure the network paths used to transmit sensitive information to the user",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 42,
+                  "score": ""
+                }
+              ]
             },
             "id": "a61ef6be-f68d-4aba-a232-8dc2486a675c",
             "labels": [
@@ -4338,8 +4475,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Confirmation\nEmail",
-              "description": "An email indicating that the dog has been declared lost, with the dog tag ID included in the email.",
+              "name": "Dog Tag ID",
+              "description": "Returns the dog tag ID from the dog name.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -4347,18 +4484,126 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "ec145f47-800f-4cfa-945b-edac941749fb",
+                  "title": "Incorrect data return",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers could intercept and alter the dog tag ID during transmission, passing through incorrect data and causing confusion or misuse of the system.",
+                  "mitigation": "* Use TLS to encrypt the data in transit\n* Implement data integrity checks (e.g., cryptographic hashes or HMAC)",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 55,
+                  "score": ""
+                },
+                {
+                  "id": "d5e0858b-df06-49f5-ada6-59eb022a91e9",
+                  "title": "Interception of dog tag ID data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Attackers could intercept the dog tag ID during transmission.",
+                  "mitigation": "* Use TLS to encrypt the data during transmission\n* Secure and isolate the network paths used to transmit sensitive data\n* Ensure that access to the dog tag ID data is restricted to authorised processes and entities only\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 56,
+                  "score": ""
+                }
+              ]
             },
-            "id": "e7892e4f-78fd-4b52-bb2e-16287a8105ad",
+            "id": "21169a2e-6f44-4464-af4c-f05f720df1b4",
             "labels": [
-              "Confirmation\nEmail"
+              "Dog Tag ID"
             ],
             "source": {
-              "cell": "43158520-832f-4e46-b50f-a764c21cda39"
+              "cell": "f13f761e-b2fd-4a96-8760-72292fcc9274"
             },
             "target": {
-              "cell": "cfb54d66-7fba-401c-a3b1-c3ccf93ebf07"
-            }
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "vertices": [
+              {
+                "x": 930,
+                "y": 410
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Dog Status",
+              "description": "Passes the new \"lost\" dog status.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "04711477-5d6d-4e6d-8821-e15932b4d2e4",
+                  "title": "Tampering with dog status data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Attackers could intercept and alter the dog status data as it is being transmitted, which could lead to incorrect data being stored, causing confusion or misuse of the system.",
+                  "mitigation": "* Use TLS to encrypt the data in transit\n* Implement data integrity checks (e.g., cryptographic hashes or HMAC) to verify that the data has not been altered during transmission\n* Log and monitor all data flows to detect and respond to any unauthorised modifications",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 49,
+                  "score": ""
+                },
+                {
+                  "id": "f02d7222-cdc2-4b60-a479-09c11e0e96b5",
+                  "title": "Interception of dog status data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Information about the dog's status could be intercepted as it is transmitted to the datastore.",
+                  "mitigation": "* Use TLS to encrypt the data during transmission\n* Secure and isolate the network paths used to transmit sensitive data\n* Ensure that access to the dog status data is restricted to authorised processes and entities only",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 51,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "0601a3e6-00b5-4d6e-a6c3-29f1d989370c",
+            "labels": [
+              "Dog Status"
+            ],
+            "source": {
+              "cell": "56d8f0d3-157d-413c-8554-056dede9b8db"
+            },
+            "target": {
+              "cell": "f13f761e-b2fd-4a96-8760-72292fcc9274"
+            },
+            "vertices": [
+              {
+                "x": 920,
+                "y": 340
+              }
+            ]
           },
           {
             "position": {
@@ -4374,13 +4619,11 @@
                 "text": "Dog Datastore"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -4394,7 +4637,7 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
@@ -4404,7 +4647,7 @@
                 {
                   "id": "9ce43284-5dd5-4f82-b10f-7526c6a636fa",
                   "title": "Unauthorised modification of dog data",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Tampering",
                   "description": "An attacker might gain unauthorised access and alter the information of the dog (e.g., name, lost status, owner, dog tag ID). ",
@@ -4417,7 +4660,7 @@
                 {
                   "id": "078253d0-1091-440e-b6e9-8262efdf0cbd",
                   "title": "Dog datastore unwanted access",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Sensitive information might be exposed to unauthorised individuals.",
@@ -4429,15 +4672,41 @@
                 },
                 {
                   "id": "ca0c6d8d-507c-4538-a719-0659ad6a379a",
-                  "title": "Disruption of service",
-                  "status": "Open",
+                  "title": "Overloading with requests",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
-                  "description": "Could be flooded with malicious requests or exploit vulnerabilities to disrupt the availability of the data.",
-                  "mitigation": "* Employ rate limiting and traffic monitoring",
+                  "description": "Attackers could overwhelm the datastore by sending an excessive number of requests, causing it to slow down or crash.",
+                  "mitigation": "* Employ rate limiting and traffic monitoring\n* Ensure redundancy and failover mechanisms are in place so that backup systems can take over",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 15,
+                  "score": ""
+                },
+                {
+                  "id": "25287e00-dc0e-4331-88c7-bc8c27576c19",
+                  "title": "Disputed data changes",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "An attacker or insider could dispute or deny making changes to records within the datastore, leading to challenges in auditing and accountability.",
+                  "mitigation": "* Maintain detailed, tamper-evident logs of all actions performed on the datastore, including timestamps, user IDs, and specific changes\n* Use cryptographic signatures on logs\n* Restrict access to the datastore and its logs, allowing only authorised personnel to make changes",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 57,
+                  "score": ""
+                },
+                {
+                  "id": "c6ffce82-4e7d-487c-b057-b599a9e6d423",
+                  "title": "Storing malformed data",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Attackers could send malformed data to the datastore, causing it to crash, consume excessive resources, or corrupt the stored data.",
+                  "mitigation": "* Implement input validation and sanitisation to ensure that all data sent is properly formatted\n* Use data integrity checks and robust error handling within the datastore",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 58,
                   "score": ""
                 }
               ]
@@ -4850,6 +5119,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 10
+    "threatTop": 58
   }
 }
