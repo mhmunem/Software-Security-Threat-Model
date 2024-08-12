@@ -1,7 +1,7 @@
 {
   "version": "2.2.0",
   "summary": {
-    "title": "Assignment 2 Group 2",
+    "title": "Assignment2",
     "owner": "",
     "description": "A web-based application designed to register dogs in order to get their identification\ntags, as well as the management and traceability of dogs. Owners can register their dogs, and receive or renew their\nunique tags delivered by the Council. Dogs can be declared lost or found, and owners can terminate a registration\nbefore its expiration date.",
     "id": 0
