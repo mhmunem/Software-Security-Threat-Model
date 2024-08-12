@@ -3381,8 +3381,8 @@
                 "text": "Report of\nfound dog"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -3396,19 +3396,34 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "58155729-08d9-4633-991a-f0bbfee7a365",
+                  "title": "Report targeting someones dog ",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Anonymous users can get access to the dogs tag no. and report the dog from report lost dog tag. This can lead to false reporting.",
+                  "mitigation": "Use the status",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 0,
+                  "score": ""
+                }
+              ]
             }
           },
           {
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -3428,12 +3443,65 @@
               "description": "Dogs tag ID,\nPhysical address",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "899767dd-4ab2-4cd2-8de8-1a712932051a",
+                  "title": "Report someones dog targeting them ",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "If the attacker gets a dog tag. the attacker can target that dog owner and report it.",
+                  "mitigation": "Check the dog status if the dog status is not LOST then don't report it to pick or the inform the owner.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 75,
+                  "score": ""
+                },
+                {
+                  "id": "9f03a899-1e13-4097-854d-b87b627a0c89",
+                  "title": "DDoS : Multiple reporting to block valid users.",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "Do a Distributed Denial of service attack to block valid reporters.",
+                  "mitigation": "IP white list \nAnti DDoS attack services i.e. cloudflare\n ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 77,
+                  "score": ""
+                },
+                {
+                  "id": "30622b8b-dbd7-4def-b99e-5fe8f1d45d05",
+                  "title": "Reporting Dogs at diffrerent location ",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "The attacker give false location of the dog.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 81,
+                  "score": ""
+                },
+                {
+                  "id": "10461bb5-9f6a-443d-af51-fb01ed63e819",
+                  "title": "Checking the error message to get how the process works",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Checking the  error messages to find out the process working. ",
+                  "mitigation": "Encrypt the error message to error codes.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 84,
+                  "score": ""
+                }
+              ]
             },
             "id": "4147beae-b952-4cca-9f55-46266e015709",
             "labels": [
@@ -3447,7 +3515,11 @@
             },
             "vertices": [
               {
-                "x": 440,
+                "x": 400,
+                "y": 340
+              },
+              {
+                "x": 460,
                 "y": 340
               }
             ]
@@ -3574,15 +3646,15 @@
               "threats": []
             },
             "id": "ff0e6be5-fed1-413b-8e3a-626fc35e2f7a",
+            "labels": [
+              "Lost dog\ndetails"
+            ],
             "source": {
               "cell": "f42e3ca7-4677-4e76-a2b3-10460737fb64"
             },
             "target": {
               "cell": "e75b6cd6-97c2-468f-9445-6d865ef51b40"
-            },
-            "labels": [
-              "Lost dog\ndetails"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -3616,15 +3688,15 @@
               "threats": []
             },
             "id": "f500daac-a76b-4922-93b1-cba38a2fbcaf",
+            "labels": [
+              "Dog details"
+            ],
             "source": {
               "cell": "f42e3ca7-4677-4e76-a2b3-10460737fb64"
             },
             "target": {
               "cell": "839747f8-4d24-46eb-b3a5-e1d70ed58db3"
-            },
-            "labels": [
-              "Dog details"
-            ]
+            }
           },
           {
             "shape": "flow",
@@ -3658,15 +3730,15 @@
               "threats": []
             },
             "id": "2a6caead-527a-4b7c-a80c-1ae971cd86f6",
+            "labels": [
+              "End user details"
+            ],
             "source": {
               "cell": "f42e3ca7-4677-4e76-a2b3-10460737fb64"
             },
             "target": {
               "cell": "17dc361a-03bb-4263-9fca-acce27e3a14d"
-            },
-            "labels": [
-              "End user details"
-            ]
+            }
           },
           {
             "position": {
@@ -3823,8 +3895,8 @@
           },
           {
             "position": {
-              "x": 570,
-              "y": 90
+              "x": 280,
+              "y": 60
             },
             "size": {
               "width": 112.5,
@@ -3842,8 +3914,8 @@
             },
             "visible": true,
             "shape": "actor",
-            "id": "e75b6cd6-97c2-468f-9445-6d865ef51b40",
             "zIndex": 15,
+            "id": "e75b6cd6-97c2-468f-9445-6d865ef51b40",
             "data": {
               "type": "tm.Actor",
               "name": "Dog services",
