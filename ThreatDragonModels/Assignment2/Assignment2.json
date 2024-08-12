@@ -4881,15 +4881,41 @@
                   "new": false,
                   "number": 8,
                   "score": ""
+                },
+                {
+                  "id": "e1131552-302e-4493-9d83-c6526159918a",
+                  "title": "Adversary in the middle change dog ID",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An adversary-in-the-middle intercepts the request to terminate a dogs registration and modify its content.",
+                  "mitigation": "* Use secure connection, http-only and secure cookie with unique session id.\n* Sign (hash) content with user's private key.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 64,
+                  "score": ""
+                },
+                {
+                  "id": "67edbfe6-26b0-4ea6-b08a-51984f1f5dd5",
+                  "title": "Unregistered user tries to terminate dogs registration",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Elevation of privilege",
+                  "description": "An unregistered user sends a request to terminate a dogs registration",
+                  "mitigation": "* Use unique session id to ensure user is currently logged in the system.\n* Apply least privilege principle, i.e. only registered user can access the action.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 65,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
                 "spoofing": 3,
-                "tampering": 1,
+                "tampering": 2,
                 "repudiation": 2,
                 "informationDisclosure": 0,
                 "denialOfService": 3,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 1
               }
             }
           },
@@ -4951,8 +4977,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Confirmation message",
-              "description": "Also includes the dog owner's email address",
+              "name": "Email",
+              "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -4962,35 +4988,15 @@
               "protocol": "",
               "threats": []
             },
-            "id": "794676a5-198e-461e-8657-9a419edd8a0a",
+            "id": "900b8648-542c-4cd3-9dac-55061fb7e4de",
             "labels": [
-              "Confirmation message"
+              "Email"
             ],
             "source": {
-              "cell": "653468cc-0c78-4b4f-88b1-69f9ec68a3e9"
-            },
-            "target": {
               "cell": "be8daf94-fd3a-431e-8a6c-306292acc526"
             },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
+            "target": {
+              "cell": "6e2a25a3-35c5-4a29-abf4-e0a520c7455e"
             }
           },
           {
@@ -5013,8 +5019,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Email",
-              "description": "",
+              "name": "Confirmation message",
+              "description": "Also includes the dog owner's email address",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -5024,15 +5030,15 @@
               "protocol": "",
               "threats": []
             },
-            "id": "900b8648-542c-4cd3-9dac-55061fb7e4de",
+            "id": "794676a5-198e-461e-8657-9a419edd8a0a",
             "labels": [
-              "Email"
+              "Confirmation message"
             ],
             "source": {
-              "cell": "be8daf94-fd3a-431e-8a6c-306292acc526"
+              "cell": "653468cc-0c78-4b4f-88b1-69f9ec68a3e9"
             },
             "target": {
-              "cell": "6e2a25a3-35c5-4a29-abf4-e0a520c7455e"
+              "cell": "be8daf94-fd3a-431e-8a6c-306292acc526"
             }
           },
           {
@@ -5212,6 +5218,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "",
-    "threatTop": 63
+    "threatTop": 65
   }
 }
