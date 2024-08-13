@@ -189,7 +189,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "User trying to register large numbers of dogs at the same time.",
-                  "mitigation": "* Add a cooldown time for the same IP to register another dog",
+                  "mitigation": "* Add a cooldown time for the same IP to register another dog\n* Implement rate limiting to restrict the number of requests a single IP address can make\n* Use CAPTCHA on the registration form to prevent automated bots",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 66,
@@ -202,7 +202,7 @@
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "An attacker could enter malformed data in input fields to obtain information. ",
-                  "mitigation": "* Input validation - sanitise inputs and special characters. ",
+                  "mitigation": "* Input validation - sanitise inputs and special characters. \n* Implement proper error handling and logging without exposing detailed error messages to the user",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 67,
@@ -215,7 +215,7 @@
                   "severity": "Medium",
                   "type": "Repudiation",
                   "description": "The user falsely claims they have paid the registration fee (denies not paying). ",
-                  "mitigation": "* Keep a copy of bank receipts, including the registration number reference and timestamps",
+                  "mitigation": "* Keep a copy of bank receipts, including the registration number reference and timestamps\n* Use digital signatures for payment receipts and invoices\n* Integrate an automated payment gateway that verifies the payments in real-time",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 132,
@@ -730,86 +730,6 @@
               {
                 "x": 600,
                 "y": 130
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Registration details",
-              "description": "Includes:\n- Personal details:\n   * Pronoun\n   * First and last name\n   * Email address\n   * Physical address\n- Dog details:\n   * Dog name\n   * Dog breed",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "14fe49af-e863-4556-80d8-c46708583086",
-                  "title": "Adversary-in-the-middle gain information",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "An adversary-in-the-middle intercepts the data and reads sensitive information.",
-                  "mitigation": "* Protect data using TLS\n* Isolate the communication channels used for transmitting sensitive data\n* Implement secure communication channels ",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 71,
-                  "score": ""
-                },
-                {
-                  "id": "d9258019-ea75-4075-8387-197c9b9589c2",
-                  "title": "Insecure connection",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Data can be tampered by an adversary in the middle where the information can be modified.",
-                  "mitigation": "* Use TLS",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 103,
-                  "score": ""
-                }
-              ],
-              "threatFrequency": {
-                "tampering": 1,
-                "informationDisclosure": 1,
-                "denialOfService": 0
-              }
-            },
-            "id": "826191eb-2af6-46ee-b50d-b5311f90ff26",
-            "labels": [
-              "Registration details"
-            ],
-            "source": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "target": {
-              "cell": "a99fedc9-d9e2-472f-852a-a20737f4c319"
-            },
-            "vertices": [
-              {
-                "x": 560,
-                "y": 90
               }
             ]
           },
@@ -2013,6 +1933,86 @@
             "shape": "flow",
             "attrs": {
               "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Registration details",
+              "description": "Includes:\n- Personal details:\n   * Pronoun\n   * First and last name\n   * Email address\n   * Physical address\n- Dog details:\n   * Dog name\n   * Dog breed",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "14fe49af-e863-4556-80d8-c46708583086",
+                  "title": "Adversary-in-the-middle gain information",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "An adversary-in-the-middle intercepts the data and reads sensitive information.",
+                  "mitigation": "* Protect data using TLS\n* Isolate the communication channels used for transmitting sensitive data\n* Implement secure communication channels ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 71,
+                  "score": ""
+                },
+                {
+                  "id": "d9258019-ea75-4075-8387-197c9b9589c2",
+                  "title": "Insecure connection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Data can be tampered by an adversary in the middle where the information can be modified.",
+                  "mitigation": "* Use TLS to encrypt the data in transit\n* Implement hashing to create a checksum of the data before transmission and verify it upon receipt\n* Enforce HTTPS by implementing HSTS, which instructs browsers to only interact with the server over a secure HTTPS connection",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 103,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "id": "826191eb-2af6-46ee-b50d-b5311f90ff26",
+            "labels": [
+              "Registration details"
+            ],
+            "source": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "target": {
+              "cell": "a99fedc9-d9e2-472f-852a-a20737f4c319"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
                 "stroke": "red",
                 "strokeWidth": 2.5,
                 "targetMarker": {
@@ -2512,8 +2512,8 @@
                 "text": "Terminate a\n registration"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2527,7 +2527,7 @@
               "description": "Action to terminate an existing dog registration.",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -2536,11 +2536,11 @@
                 {
                   "id": "d3b850d8-753e-44df-84cb-0bc12be6ff2e",
                   "title": "Fraudulent reporting",
-                  "status": "Mitigated",
+                  "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "A user could obtain another user's email address, dog ID, and dog name, and fraudulently terminate the dog's registration. ",
-                  "mitigation": "* Require authentication for registration termination with unique short-lived session token.\n* Use HTTP-only and secure cookies.",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 2,
@@ -2566,7 +2566,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Multiple requests coming from the same IP, or multiple requests to terminate the same dog registration. ",
-                  "mitigation": "* Disallow multiple requests from same origin IP (IP blocking after multiple calls) within in few seconds.",
+                  "mitigation": "* Implement rate limiting to restrict the number of requests that can be processed from the same IP address\n* Add CAPTCHA to the termination request form to prevent automated bots",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 4,
@@ -2625,7 +2625,7 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Attackers may impersonate the dog owner if they know their email address and the dog's name. This can lead to false reports and the attacker also gains the dog’s most recent tag ID.",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 85,
