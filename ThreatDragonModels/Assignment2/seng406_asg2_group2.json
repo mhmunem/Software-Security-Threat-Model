@@ -207,12 +207,25 @@
                   "new": false,
                   "number": 67,
                   "score": ""
+                },
+                {
+                  "id": "fb9c9059-5b91-48f2-8520-45dba3245b00",
+                  "title": "User claims to have made payment",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "The user falsely claims they have paid the registration fee (denies not paying). ",
+                  "mitigation": "* Keep a copy of bank receipts, including the registration number reference and timestamps",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 132,
+                  "score": ""
                 }
               ],
               "threatFrequency": {
                 "spoofing": 1,
                 "tampering": 0,
-                "repudiation": 1,
+                "repudiation": 2,
                 "informationDisclosure": 1,
                 "denialOfService": 1,
                 "elevationOfPrivilege": 0
@@ -221,11 +234,11 @@
           },
           {
             "position": {
-              "x": 280,
+              "x": 273.75,
               "y": 30
             },
             "size": {
-              "width": 112.5,
+              "width": 120,
               "height": 60
             },
             "attrs": {
@@ -820,86 +833,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Termination details",
-              "description": "Includes:\n   * Email address\n   * Dog tag ID\n   * Dog name",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "5dc0aa73-fb1c-4c36-a79b-ced514bac8f9",
-                  "title": "Adversary-in-the-middle gain information",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Same as #71",
-                  "mitigation": "Same as #71",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 63,
-                  "score": ""
-                },
-                {
-                  "id": "ba22abd4-4839-496e-9941-1df63a0af5aa",
-                  "title": "Insecure connection",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Same as #103",
-                  "mitigation": "Same as #103",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 110,
-                  "score": ""
-                }
-              ],
-              "threatFrequency": {
-                "tampering": 1,
-                "informationDisclosure": 0,
-                "denialOfService": 0
-              }
-            },
-            "id": "a5e4f90e-00f1-4337-b792-1734e67585e8",
-            "labels": [
-              "Termination details"
-            ],
-            "source": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "target": {
-              "cell": "31a445fb-f779-4541-9b86-b6fed369331b"
-            },
-            "vertices": [
-              {
-                "x": 690,
-                "y": 40
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Email",
               "description": "Email containing the relevant information.",
               "outOfScope": false,
@@ -922,226 +855,6 @@
               "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
             },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Payment details",
-              "description": "Includes registration numbers as reference",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "dc00dee3-c590-419d-972b-bb880054b1f7",
-                  "title": "Adversary-in-the-middle gain information",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Same as #71",
-                  "mitigation": "Same as #71",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 102,
-                  "score": ""
-                },
-                {
-                  "id": "e1058b98-2e8b-4db8-a695-700d9ed6f784",
-                  "title": "Insecure connection",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Same as #103",
-                  "mitigation": "Same as #103",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 104,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "3d90ffa1-2eb4-44d9-a294-b02e7c9a2825",
-            "labels": [
-              "Payment details"
-            ],
-            "source": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "target": {
-              "cell": "d87e97b6-3ef7-4c08-a987-1d037df724e1"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Renewal details",
-              "description": "Includes:\n   * Dog tag ID\n   * Delivery address",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "58cb10df-9167-41e1-a88a-fd501afd6a45",
-                  "title": "Adversary-in-the-middle gain information",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Same as #71",
-                  "mitigation": "Same as #71",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 100,
-                  "score": ""
-                },
-                {
-                  "id": "1964aedb-2ddc-4c56-acbf-3aaced78c96b",
-                  "title": "Insecure connection",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Same as #103",
-                  "mitigation": "Same as #103",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 108,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "c1d3d502-3e5d-4c9a-944c-74a71a6d6f9f",
-            "labels": [
-              "Renewal details"
-            ],
-            "source": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "target": {
-              "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
-            },
-            "vertices": [
-              {
-                "x": 720,
-                "y": 220
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "New dog \ntag",
-              "description": "Dog tag sent to owner",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": [
-                {
-                  "id": "1c718ba2-7969-4bf0-88ac-fda89e5bc5fa",
-                  "title": "Adversary-in-the-middle gain information",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Information disclosure",
-                  "description": "Same as #71",
-                  "mitigation": "Same as #71",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 99,
-                  "score": ""
-                },
-                {
-                  "id": "abae5dba-c663-43ac-b4a4-6a629c9dee7e",
-                  "title": "Insecure connection",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Tampering",
-                  "description": "Same as #103",
-                  "mitigation": "Same as #103",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 107,
-                  "score": ""
-                }
-              ]
-            },
-            "id": "5336cc4a-a557-476e-94da-e3edc2a16add",
-            "labels": [
-              "New dog \ntag"
-            ],
-            "source": {
-              "cell": "94f7c8ca-ec92-47c9-b0d0-0091ff987094"
-            },
-            "target": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "vertices": [
-              {
-                "x": 600,
-                "y": 280
-              }
-            ]
           },
           {
             "shape": "flow",
@@ -1995,6 +1708,311 @@
             "shape": "flow",
             "attrs": {
               "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Termination details",
+              "description": "Includes:\n   * Email address\n   * Dog tag ID\n   * Dog name",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "5dc0aa73-fb1c-4c36-a79b-ced514bac8f9",
+                  "title": "Adversary-in-the-middle gain information",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Same as #71",
+                  "mitigation": "Same as #71",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 63,
+                  "score": ""
+                },
+                {
+                  "id": "ba22abd4-4839-496e-9941-1df63a0af5aa",
+                  "title": "Insecure connection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Same as #103",
+                  "mitigation": "Same as #103",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 110,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "id": "a5e4f90e-00f1-4337-b792-1734e67585e8",
+            "labels": [
+              "Termination details"
+            ],
+            "source": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "target": {
+              "cell": "31a445fb-f779-4541-9b86-b6fed369331b"
+            },
+            "vertices": [
+              {
+                "x": 690,
+                "y": 40
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Renewal details",
+              "description": "Includes:\n   * Dog tag ID\n   * Delivery address",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "58cb10df-9167-41e1-a88a-fd501afd6a45",
+                  "title": "Adversary-in-the-middle gain information",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Same as #71",
+                  "mitigation": "Same as #71",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 100,
+                  "score": ""
+                },
+                {
+                  "id": "1964aedb-2ddc-4c56-acbf-3aaced78c96b",
+                  "title": "Insecure connection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Same as #103, an attacker could change the address to steal a dog's tag. ",
+                  "mitigation": "Same as #103",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 108,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "id": "c1d3d502-3e5d-4c9a-944c-74a71a6d6f9f",
+            "labels": [
+              "Renewal details"
+            ],
+            "source": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "target": {
+              "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
+            },
+            "vertices": [
+              {
+                "x": 720,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "New dog \ntag",
+              "description": "Dog tag sent to owner",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "1c718ba2-7969-4bf0-88ac-fda89e5bc5fa",
+                  "title": "Adversary-in-the-middle gain information",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Same as #71",
+                  "mitigation": "Same as #71",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 99,
+                  "score": ""
+                },
+                {
+                  "id": "abae5dba-c663-43ac-b4a4-6a629c9dee7e",
+                  "title": "Insecure connection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Same as #103",
+                  "mitigation": "Same as #103",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 107,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "5336cc4a-a557-476e-94da-e3edc2a16add",
+            "labels": [
+              "New dog \ntag"
+            ],
+            "source": {
+              "cell": "94f7c8ca-ec92-47c9-b0d0-0091ff987094"
+            },
+            "target": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "vertices": [
+              {
+                "x": 600,
+                "y": 280
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Payment details",
+              "description": "Includes registration numbers as reference",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "dc00dee3-c590-419d-972b-bb880054b1f7",
+                  "title": "Adversary-in-the-middle gain information",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "Same as #71",
+                  "mitigation": "Same as #71",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 102,
+                  "score": ""
+                },
+                {
+                  "id": "e1058b98-2e8b-4db8-a695-700d9ed6f784",
+                  "title": "Insecure connection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Same as #103",
+                  "mitigation": "Same as #103",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 104,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "3d90ffa1-2eb4-44d9-a294-b02e7c9a2825",
+            "labels": [
+              "Payment details"
+            ],
+            "source": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "target": {
+              "cell": "d87e97b6-3ef7-4c08-a987-1d037df724e1"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
                 "stroke": "red",
                 "strokeWidth": 2.5,
                 "targetMarker": {
@@ -2383,7 +2401,29 @@
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "4e199de9-0d16-4e43-b5fc-1c3defbe6dc2",
+                  "title": "Owner denies receiving tag",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "The tag owner may deny having received the tag. ",
+                  "mitigation": "* Logging steps in the manufacturing process, such as completion date\n* Tracking the package when sending to the owner",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 131,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 2,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -2400,8 +2440,8 @@
                 "text": "Renew dog \nregistration"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2415,12 +2455,47 @@
               "description": "Action to renew an existing dog registration.",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "d443580d-b5fe-49ca-9fb6-96145844b26e",
+                  "title": "Impersonation of dog owner",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "An attacker could repeatedly enter a tag ID, causing the system to spam the tag owner's email. Can lead to Denial of Service. ",
+                  "mitigation": "",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 130,
+                  "score": ""
+                },
+                {
+                  "id": "07a3e62f-8686-48e3-b561-238b81bd48ca",
+                  "title": "User claims to have made payment",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Repudiation",
+                  "description": "Same as #132",
+                  "mitigation": "Same as #132",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 133,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -5871,6 +5946,6 @@
     ],
     "diagramTop": 4,
     "reviewer": "Morgan English",
-    "threatTop": 129
+    "threatTop": 133
   }
 }
