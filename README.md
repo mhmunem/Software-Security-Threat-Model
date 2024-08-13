@@ -7,6 +7,9 @@ Description: A web-based application designed to register dogs in order to get t
 - Council Employee
 
 Document Owner: Fabian Gilson
+
 Participants: James Suddaby, Kane Xie, Daniel Cha, Mohammad Munem 
+
 Reviewer: Morgan English 
+
 Doc: [Google Docs](https://docs.google.com/document/d/1W-bBLjRRvqJhG1ZdiYmg6vr-C4ri-5ngK66otZvr2jM/edit?usp=sharing)  
