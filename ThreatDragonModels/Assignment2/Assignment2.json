@@ -2,8 +2,8 @@
   "version": "2.2.0",
   "summary": {
     "title": "Assignment2",
-    "owner": "",
-    "description": "A web-based application designed to register dogs in order to get their identification\ntags, as well as the management and traceability of dogs. Owners can register their dogs, and receive or renew their\nunique tags delivered by the Council. Dogs can be declared lost or found, and owners can terminate a registration\nbefore its expiration date.",
+    "owner": "Fabian Gilson",
+    "description": "The assignment of  SENG406 is  about a Dog register web app. A web-based application designed to register dogs in order to get their identification tags, as well as the management and traceability of dogs. Owners can register their dogs, and receive or renew their\nunique tags delivered by the Council. Dogs can be declared lost or found, and owners can terminate a registration\nbefore its expiration date.\nThe app, as we define it, exposes the following (simplified) features:\n  * individuals can register their dog to the app and order dog tags.\n  * individuals can renew their dog tags and get the new dog tags.\n  * the council delivers the dogs tags to  the user.\n  * member of the public can report potential lost dogs.\n  * the council picks up the lost dog and notifies the dog owner. \n\nEnd-user app\n  * Does not store private details, i.e. contact details, address, and bank / PayPal account (stored in private database)\n  * Registers a dog\n  * Renew a registration\n  * Terminate a registration\n  * Declare a lost dog\n  * Report of found dog\n\nTrust levels (privileges):\n  0. Anonymous\n  1. Dog owner",
     "id": 0
   },
   "detail": {
@@ -3381,8 +3381,8 @@
                 "text": "Report of\nfound dog"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -3396,23 +3396,62 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
-              "handlesGoodsOrServices": false,
-              "isWebApplication": false,
-              "privilegeLevel": "",
+              "handlesGoodsOrServices": true,
+              "isWebApplication": true,
+              "privilegeLevel": "0,1",
               "threats": [
                 {
                   "id": "58155729-08d9-4633-991a-f0bbfee7a365",
                   "title": "Report targeting someones dog ",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Anonymous users can get access to the dogs tag no. and report the dog from report lost dog tag. This can lead to false reporting.",
-                  "mitigation": "Use the status",
+                  "mitigation": "* Use the dog status to find out the dogs where about.",
                   "modelType": "STRIDE",
-                  "new": true,
-                  "number": 0,
+                  "new": false,
+                  "number": 66,
+                  "score": ""
+                },
+                {
+                  "id": "e32595b0-4eed-4f69-b5b4-d392d5c4fec1",
+                  "title": "Adversary-in-the-Middle - changes the dog tags",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An attacker getting access to the network can change the dog tags.",
+                  "mitigation": "*  Validate legitimate dog tags \n*  Encrypt the information while the data is in transit",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 70,
+                  "score": ""
+                },
+                {
+                  "id": "6ae52dfe-35ae-4c7c-a14b-12b75bd65acf",
+                  "title": "Deny reporting ",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Repudiation",
+                  "description": "An attacker can deny they did not report any dogs.",
+                  "mitigation": "* Log and trace the timestamp, originating IP address. \n\n\n",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 72,
+                  "score": ""
+                },
+                {
+                  "id": "1d98044e-c242-45b6-bbfb-676d8c302ef2",
+                  "title": "Endpoint Denial of Service - either with one IP of distributed IPs",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "An attacker may report multiple times with the same IP or bot net distributed network to prevent valid reports.",
+                  "mitigation": "* IP white list and  black listing.\n* Anti DDoS attack services i.e. cloudflare.\n* Filter Network Traffic using services provided by Content Delivery Networks (CDN).",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 73,
                   "score": ""
                 }
               ]
@@ -3453,10 +3492,10 @@
                   "id": "899767dd-4ab2-4cd2-8de8-1a712932051a",
                   "title": "Report someones dog targeting them ",
                   "status": "Mitigated",
-                  "severity": "Medium",
+                  "severity": "Low",
                   "type": "Tampering",
-                  "description": "If the attacker gets a dog tag. the attacker can target that dog owner and report it.",
-                  "mitigation": "Check the dog status if the dog status is not LOST then don't report it to pick or the inform the owner.",
+                  "description": "An attacker having a dog tag, can target that dog owner and report it repeatedly.",
+                  "mitigation": "* Check the dog status if the dog status is not LOST then don't report it to pick or the inform the owner.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 75,
@@ -3464,12 +3503,12 @@
                 },
                 {
                   "id": "9f03a899-1e13-4097-854d-b87b627a0c89",
-                  "title": "DDoS : Multiple reporting to block valid users.",
-                  "status": "Open",
-                  "severity": "Medium",
+                  "title": "DDoS: Multiple reporting to block valid users.",
+                  "status": "Mitigated",
+                  "severity": "High",
                   "type": "Denial of service",
-                  "description": "Do a Distributed Denial of service attack to block valid reporters.",
-                  "mitigation": "IP white list \nAnti DDoS attack services i.e. cloudflare\n ",
+                  "description": "An attacker can do a Distributed Denial of service attack to block valid reporters.",
+                  "mitigation": "* IP white list \n* Anti DDoS attack services i.e. cloudflare\n* Filter Network Traffic using services provided by Content Delivery Networks (CDN)",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 77,
@@ -3477,12 +3516,12 @@
                 },
                 {
                   "id": "30622b8b-dbd7-4def-b99e-5fe8f1d45d05",
-                  "title": "Reporting Dogs at diffrerent location ",
+                  "title": "Reporting Dogs at FALSE locations",
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Tampering",
-                  "description": "The attacker give false location of the dog.",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "The attacker can give false location of the dog.",
+                  "mitigation": "*Check how many times the false location is given and block user accordingly.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 81,
@@ -3490,12 +3529,12 @@
                 },
                 {
                   "id": "10461bb5-9f6a-443d-af51-fb01ed63e819",
-                  "title": "Checking the error message to get how the process works",
+                  "title": "Checking the error message to figure out how the process works",
                   "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Information disclosure",
-                  "description": "Checking the  error messages to find out the process working. ",
-                  "mitigation": "Encrypt the error message to error codes.",
+                  "description": "An attacker can check the  error messages to find out inner workings of the process. ",
+                  "mitigation": "* Encrypt the error message to error codes.",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 84,
@@ -3515,12 +3554,8 @@
             },
             "vertices": [
               {
-                "x": 400,
-                "y": 340
-              },
-              {
-                "x": 460,
-                "y": 340
+                "x": 600,
+                "y": 375
               }
             ]
           },
@@ -3667,7 +3702,7 @@
                 "sourceMarker": {
                   "name": "block"
                 },
-                "strokeDasharray": null
+                "strokeDasharray": "4 3"
               }
             },
             "width": 200,
@@ -3678,7 +3713,7 @@
               "type": "tm.Flow",
               "name": "Dog details",
               "description": "The dogs id needs to be verified and information about the dog needs to be shown to dog services to help them find the dog.",
-              "outOfScope": false,
+              "outOfScope": true,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": true,
@@ -3709,7 +3744,7 @@
                 "sourceMarker": {
                   "name": "block"
                 },
-                "strokeDasharray": null
+                "strokeDasharray": "4 3"
               }
             },
             "width": 200,
@@ -3720,7 +3755,7 @@
               "type": "tm.Flow",
               "name": "End user details",
               "description": "The owner of the found dog needs to be notified by email.",
-              "outOfScope": false,
+              "outOfScope": true,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
               "isBidirectional": true,
@@ -3738,7 +3773,13 @@
             },
             "target": {
               "cell": "17dc361a-03bb-4263-9fca-acce27e3a14d"
-            }
+            },
+            "vertices": [
+              {
+                "x": 860,
+                "y": 350
+              }
+            ]
           },
           {
             "position": {
@@ -5262,7 +5303,7 @@
       }
     ],
     "diagramTop": 4,
-    "reviewer": "",
-    "threatTop": 65
+    "reviewer": "Morgan English",
+    "threatTop": 75
   }
 }
