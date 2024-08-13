@@ -61,8 +61,8 @@
           },
           {
             "position": {
-              "x": 335,
-              "y": 310
+              "x": 215,
+              "y": 550
             },
             "size": {
               "width": 230,
@@ -79,31 +79,6 @@
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Secure banking infrastructure",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            }
-          },
-          {
-            "position": {
-              "x": 285,
-              "y": 587.0000000000002
-            },
-            "size": {
-              "width": 270,
-              "height": 170
-            },
-            "shape": "trust-boundary-box",
-            "attrs": {
-              "headerText": {
-                "text": "Tag manufacture/postage"
-              }
-            },
-            "zIndex": -1,
-            "id": "85aadaac-26a3-4145-a80c-82a96a0d8c75",
-            "data": {
-              "type": "tm.BoundaryBox",
-              "name": "Tag manufacture/postage",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false
@@ -136,8 +111,33 @@
           },
           {
             "position": {
-              "x": 930,
-              "y": 150
+              "x": 797.9999999999934,
+              "y": -422.0000000000032
+            },
+            "size": {
+              "width": 680,
+              "height": 1290
+            },
+            "shape": "trust-boundary-box",
+            "attrs": {
+              "headerText": {
+                "text": "Secure council infrastructure"
+              }
+            },
+            "id": "868f301e-1c8c-44be-a12f-34c874da4fe3",
+            "zIndex": -1,
+            "data": {
+              "type": "tm.BoundaryBox",
+              "name": "Secure council infrastructure",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 925,
+              "y": 140
             },
             "size": {
               "width": 100,
@@ -148,8 +148,8 @@
                 "text": "Register \na dog"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -163,12 +163,60 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "1c0a7202-29ae-489f-a862-42deb099cbe8",
+                  "title": "Fake personal information",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "A dog owner could use fake personal information, such as name and physical address, when registering a dog. They would then be able to deny affiliation with the dog. ",
+                  "mitigation": "* Track payment details for registrations",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 64,
+                  "score": ""
+                },
+                {
+                  "id": "b303b4b5-a229-4d21-829e-951375beab69",
+                  "title": "Flooding of requests from the same IP",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Denial of service",
+                  "description": "User trying to register large numbers of dogs at the same time.",
+                  "mitigation": "* Add a cooldown time for the same IP to register another dog",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 66,
+                  "score": ""
+                },
+                {
+                  "id": "b8693c20-9ade-4cba-9882-57291ab586d4",
+                  "title": "Data injection",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "An attacker could enter malformed data in input fields to obtain information. ",
+                  "mitigation": "* Input validation - sanitise inputs and special characters. ",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 67,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -204,19 +252,6 @@
               "providesAuthentication": false,
               "threats": [
                 {
-                  "id": "c872a42a-3ed0-4364-b4c4-a0ec16d7dbdf",
-                  "title": "Denial of lost dog report",
-                  "status": "Mitigated",
-                  "severity": "Medium",
-                  "type": "Repudiation",
-                  "description": "Dog owner might later deny having made the lost dog report.",
-                  "mitigation": "* Send a confirmation email to the email address upon report process completion\n* Maintain robust and secure logs of all transactions on the app\n* Provide confirmation page when the report process has been completed",
-                  "modelType": "STRIDE",
-                  "new": false,
-                  "number": 8,
-                  "score": ""
-                },
-                {
                   "id": "e4a71ca8-b0e6-400d-89b9-12ee6d645062",
                   "title": "Stolen credentials",
                   "status": "Mitigated",
@@ -232,7 +267,7 @@
               ],
               "threatFrequency": {
                 "spoofing": 1,
-                "repudiation": 0
+                "repudiation": -1
               }
             }
           },
@@ -325,12 +360,7 @@
             "target": {
               "cell": "d87e97b6-3ef7-4c08-a987-1d037df724e1"
             },
-            "vertices": [
-              {
-                "x": 380,
-                "y": 210
-              }
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -375,8 +405,8 @@
             },
             "vertices": [
               {
-                "x": 670,
-                "y": 450
+                "x": 710,
+                "y": 560
               }
             ]
           },
@@ -491,54 +521,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "New dog \ntag",
-              "description": "Dog tag sent to owner",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "5336cc4a-a557-476e-94da-e3edc2a16add",
-            "labels": [
-              "New dog \ntag"
-            ],
-            "source": {
-              "cell": "94f7c8ca-ec92-47c9-b0d0-0091ff987094"
-            },
-            "target": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "vertices": [
-              {
-                "x": 260,
-                "y": 370
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Report data",
               "description": "This data contains:\n  * Email address used to register the dog\n  * Dog's name",
               "outOfScope": false,
@@ -562,8 +544,8 @@
             },
             "vertices": [
               {
-                "x": 680,
-                "y": 400
+                "x": 520,
+                "y": 520
               }
             ]
           },
@@ -803,81 +785,6 @@
             ]
           },
           {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Secure council infrastructure",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "id": "73e35531-6c18-40b3-be06-94b8687aa41e",
-            "labels": [
-              "Secure council infrastructure"
-            ],
-            "source": {
-              "x": 770,
-              "y": -480
-            },
-            "target": {
-              "x": 770,
-              "y": 930
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Renewal details",
-              "description": "Includes:\n   * Dog tag ID\n   * Delivery address",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "c1d3d502-3e5d-4c9a-944c-74a71a6d6f9f",
-            "labels": [
-              "Renewal details"
-            ],
-            "source": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "target": {
-              "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
-            },
-            "vertices": [
-              {
-                "x": 720,
-                "y": 220
-              }
-            ]
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1020,8 +927,8 @@
             },
             "vertices": [
               {
-                "x": 880,
-                "y": 340
+                "x": 840,
+                "y": 460
               },
               {
                 "x": 800,
@@ -1120,8 +1027,8 @@
             },
             "vertices": [
               {
-                "x": 630,
-                "y": 300
+                "x": 580,
+                "y": 480
               }
             ]
           },
@@ -1348,54 +1255,6 @@
               "protocol": "",
               "threats": []
             },
-            "id": "0df2cdcd-3642-4959-847d-69533e120475",
-            "labels": [
-              "Tag details"
-            ],
-            "source": {
-              "cell": "a99fedc9-d9e2-472f-852a-a20737f4c319"
-            },
-            "target": {
-              "cell": "94f7c8ca-ec92-47c9-b0d0-0091ff987094"
-            },
-            "vertices": [
-              {
-                "x": 670,
-                "y": 620
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Tag details",
-              "description": "Dog owners postal address and tag unique ID.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
             "id": "bf19851d-4ccb-4b8d-a60c-78daac9614d3",
             "labels": [
               "Tag details"
@@ -1406,60 +1265,7 @@
             "target": {
               "cell": "94f7c8ca-ec92-47c9-b0d0-0091ff987094"
             },
-            "vertices": [
-              {
-                "x": 780,
-                "y": 680
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Registration details",
-              "description": "Includes:\n- Personal details:\n   * Pronoun\n   * First and last name\n   * Email address\n   * Physical address\n- Dog details:\n   * Dog name\n   * Dog breed",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "826191eb-2af6-46ee-b50d-b5311f90ff26",
-            "labels": [
-              "Registration details"
-            ],
-            "source": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "target": {
-              "cell": "a99fedc9-d9e2-472f-852a-a20737f4c319"
-            },
-            "vertices": [
-              {
-                "x": 560,
-                "y": 90
-              }
-            ]
+            "vertices": []
           },
           {
             "shape": "flow",
@@ -1552,8 +1358,8 @@
             },
             "vertices": [
               {
-                "x": 730,
-                "y": 395
+                "x": 590,
+                "y": 400
               }
             ]
           },
@@ -1673,9 +1479,345 @@
             ]
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Email",
+              "description": "Email containing the relevant information.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "6de355ba-9225-4d24-9a65-4ba108cb0057",
+            "labels": [
+              "Email"
+            ],
+            "source": {
+              "cell": "80fa7fb3-77c5-453f-b8b3-b69cedda7359"
+            },
+            "target": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Renewal details",
+              "description": "Includes:\n   * Dog tag ID\n   * Delivery address",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "c1d3d502-3e5d-4c9a-944c-74a71a6d6f9f",
+            "labels": [
+              "Renewal details"
+            ],
+            "source": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "target": {
+              "cell": "6c5f84e6-d201-4f68-89da-e3e4291a6100"
+            },
+            "vertices": [
+              {
+                "x": 720,
+                "y": 220
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Registration details",
+              "description": "Includes:\n- Personal details:\n   * Pronoun\n   * First and last name\n   * Email address\n   * Physical address\n- Dog details:\n   * Dog name\n   * Dog breed",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "14fe49af-e863-4556-80d8-c46708583086",
+                  "title": "Adversery-in-the-middle gain information",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Information disclosure",
+                  "description": "An adversary-in-the-middle intercepts the data and reads sensitive information such as name and address. ",
+                  "mitigation": "* Protect data using TLS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 71,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
+            },
+            "id": "826191eb-2af6-46ee-b50d-b5311f90ff26",
+            "labels": [
+              "Registration details"
+            ],
+            "source": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "target": {
+              "cell": "a99fedc9-d9e2-472f-852a-a20737f4c319"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 90
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Registration confirmation",
+              "description": "Unique registration number, expiry date for registration",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "6d290db9-f221-4399-befb-61f6228bb29a",
+                  "title": "Adversery-in-the-middle change payment information",
+                  "status": "Mitigated",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "An adversery could change the reply to include false payment instructions. ",
+                  "mitigation": "* Become a registered payee with major banks\n* Include a warning against false payment instructions in the email response\n* Use TLS",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 72,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
+            },
+            "id": "27acd710-846a-4f3b-8ea9-0e97ab9c9fb6",
+            "labels": [
+              "Registration confirmation"
+            ],
+            "source": {
+              "cell": "a99fedc9-d9e2-472f-852a-a20737f4c319"
+            },
+            "target": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "vertices": [
+              {
+                "x": 650,
+                "y": 150
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Tag details",
+              "description": "Dog owners postal address and tag unique ID.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "0df2cdcd-3642-4959-847d-69533e120475",
+            "labels": [
+              "Tag details"
+            ],
+            "source": {
+              "cell": "a99fedc9-d9e2-472f-852a-a20737f4c319"
+            },
+            "target": {
+              "cell": "94f7c8ca-ec92-47c9-b0d0-0091ff987094"
+            },
+            "vertices": [
+              {
+                "x": 890,
+                "y": 390
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "red",
+                "strokeWidth": 2.5,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "New dog \ntag",
+              "description": "Dog tag sent to owner",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": true,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": [
+                {
+                  "id": "1c718ba2-7969-4bf0-88ac-fda89e5bc5fa",
+                  "title": "New STRIDE threat",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "Provide a description for this threat",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": true,
+                  "number": 73,
+                  "score": ""
+                }
+              ]
+            },
+            "id": "5336cc4a-a557-476e-94da-e3edc2a16add",
+            "labels": [
+              "New dog \ntag"
+            ],
+            "source": {
+              "cell": "94f7c8ca-ec92-47c9-b0d0-0091ff987094"
+            },
+            "target": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "vertices": [
+              {
+                "x": 600,
+                "y": 280
+              }
+            ]
+          },
+          {
             "position": {
               "x": 1290,
-              "y": 340
+              "y": 350
             },
             "size": {
               "width": 120,
@@ -1814,8 +1956,8 @@
                 "text": "Send email"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -1829,32 +1971,18 @@
               "description": "",
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": [
-                {
-                  "id": "d4daa540-c2e1-4546-9b62-f843455a49bc",
-                  "title": "New STRIDE threat",
-                  "status": "Open",
-                  "severity": "Medium",
-                  "type": "Spoofing",
-                  "description": "Provide a description for this threat",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
-                  "modelType": "STRIDE",
-                  "new": true,
-                  "number": 0,
-                  "score": ""
-                }
-              ]
+              "threats": []
             }
           },
           {
             "position": {
-              "x": 400,
-              "y": 340
+              "x": 280,
+              "y": 580
             },
             "size": {
               "width": 100,
@@ -1890,8 +2018,8 @@
           },
           {
             "position": {
-              "x": 360,
-              "y": 622.0000000000002
+              "x": 915,
+              "y": 490
             },
             "size": {
               "width": 120,
@@ -1928,7 +2056,7 @@
           {
             "position": {
               "x": 925,
-              "y": 340
+              "y": 330
             },
             "size": {
               "width": 110,
@@ -1964,8 +2092,8 @@
           },
           {
             "position": {
-              "x": 930,
-              "y": -30
+              "x": 925,
+              "y": -35
             },
             "size": {
               "width": 100,
@@ -2049,8 +2177,8 @@
           },
           {
             "position": {
-              "x": 925,
-              "y": 542.0000000000002
+              "x": 920,
+              "y": 730
             },
             "size": {
               "width": 110,
@@ -4939,7 +5067,7 @@
                   "mitigation": "* Require authentication for registration termination with unique short-lived session token.\n* Use HTTP-only and secure cookies.",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 6,
+                  "number": 106,
                   "score": ""
                 },
                 {
@@ -4952,7 +5080,7 @@
                   "mitigation": "* Trace (log) session id, timestamp, originating IP and user id in log.\n* Validate hashed checksum with end-user's public key.\n* Send confirmation email (with email log).",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 7,
+                  "number": 107,
                   "score": ""
                 },
                 {
@@ -4965,7 +5093,7 @@
                   "mitigation": "* Disallow multiple requests from same origin IP (IP blocking after multiple calls) within in few seconds.",
                   "modelType": "STRIDE",
                   "new": false,
-                  "number": 8,
+                  "number": 108,
                   "score": ""
                 },
                 {
