@@ -3,7 +3,7 @@
   "summary": {
     "title": "Assignment2",
     "owner": "Fabian Gilson",
-    "description": "The assignment of  SENG406 is  about a Dog register web app. A web-based application designed to register dogs in order to get their identification tags, as well as the management and traceability of dogs. Owners can register their dogs, and receive or renew their unique tags delivered by the Council. Dogs can be declared lost or found, and owners can terminate a registration before its expiration date.\n\nThe app, as we define it, exposes the following (simplified) features:\n  * individuals can register their dog to the app and order dog tags.\n  * individuals can renew their dog tags and get the new dog tags.\n  * the council delivers the dogs tags to  the user.\n  * member of the public can report potential lost dogs.\n  * the council picks up the lost dog and notifies the dog owner. \n\nEnd-user app\n  * Does not store private details, i.e. contact details, address, and bank / PayPal account (stored in private database)\n  * Registers a dog\n  * Renew a registration\n  * Terminate a registration\n  * Declare a lost dog\n  * Report of found dog\n\nTrust levels (privileges):\n  0. Anonymous\n  1. Dog owner",
+    "description": "The assignment of  SENG406 is  about a Dog register web app. A web-based application designed to register dogs in order to get their identification tags, as well as the management and traceability of dogs. Owners can register their dogs, and receive or renew their unique tags delivered by the Council. Dogs can be declared lost or found, and owners can terminate a registration before its expiration date.\n\nThe app, as we define it, exposes the following (simplified) features:\n  * individuals can register their dog to the app and order dog tags.\n  * individuals can renew their dog tags and get the new dog tags.\n  * the council delivers the dogs tags to  the user.\n  * member of the public can report potential lost dogs.\n  * the council picks up the lost dog and notifies the dog owner. \n\nEnd-user app\n  * Does not store private details, i.e. contact details, address, and bank / PayPal account (stored in private database)\n  * Registers a dog\n  * Renew a registration\n  * Terminate a registration\n  * Declare a lost dog\n  * Report of found dog\n\nTrust levels (privileges):\n  1  Anonymous user\n  2  Dog owner\n  3  Database Administrator\n  4  Website Administrator\n  5  Email process\n  6  Banking process\n  7  Dog pickup service\n  8  Dog tag manufacturing process\n  9  Database Read User\n  10 Database Read/Write User\n  11 Web server User Process\n",
     "id": 0
   },
   "detail": {
@@ -305,7 +305,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Dog details",
-              "description": "",
+              "description": "Includes:\n   * Dog name\n   * Dog breed\n   * Dog tag ID",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -353,7 +353,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "New dog tag ID",
-              "description": "",
+              "description": "Includes:\n  * Old tag ID\n  * Dogs new tag ID \nto replace with the old one",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -396,7 +396,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Tag details",
-              "description": "Dog owners postal address and tag unique ID.",
+              "description": "Includes:\n  * Dog owners postal address\n  * Renewed dog tag  ID",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -439,7 +439,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "End-user personal details",
-              "description": "",
+              "description": "Includes:\n   * Pronoun\n   * First and last name\n   * Email address\n   * Physical address",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -487,7 +487,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Tag details",
-              "description": "Dog owners postal address and tag unique ID.",
+              "description": "Includes:\n  * Dog owners postal address\n  * Unique dog tag ID",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -535,7 +535,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Dog details",
-              "description": "Details of the dog to delete.",
+              "description": "Includes:\n- Details of the dog to delete:\n   * Dogs Tag ID\n   * Dog name\n   * Dog breed",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -583,7 +583,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Payment confirmation",
-              "description": "",
+              "description": "Includes:\n- Banking details\n  * Account Name \n  * Account Number\n  * Registration Number",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -631,7 +631,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Payment confirmation",
-              "description": "",
+              "description": "Includes:\n- Banking details\n  * Account Name \n  * Account Number\n  * Registration Number",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -679,7 +679,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Registration confirmation",
-              "description": "Unique registration number, expiry date for registration",
+              "description": "Includes: \n  * owner email \n  *Unique registration number, \n  *Expiry date for registration",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -729,7 +729,55 @@
             "vertices": [
               {
                 "x": 600,
-                "y": 130
+                "y": 140
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": "4 3"
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Email",
+              "description": "Email containing the relevant information.",
+              "outOfScope": true,
+              "reasonOutOfScope": "The external API has its own security and outside the control of the web app.",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "6de355ba-9225-4d24-9a65-4ba108cb0057",
+            "labels": [
+              "Email"
+            ],
+            "source": {
+              "cell": "80fa7fb3-77c5-453f-b8b3-b69cedda7359"
+            },
+            "target": {
+              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
+            },
+            "vertices": [
+              {
+                "x": 335,
+                "y": -60
               }
             ]
           },
@@ -753,51 +801,8 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Email",
-              "description": "Email containing the relevant information.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "id": "6de355ba-9225-4d24-9a65-4ba108cb0057",
-            "labels": [
-              "Email"
-            ],
-            "source": {
-              "cell": "80fa7fb3-77c5-453f-b8b3-b69cedda7359"
-            },
-            "target": {
-              "cell": "0612f3fe-8757-4641-9d9c-9a0a41813147"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Report data",
-              "description": "This data contains:\n  * Email address used to register the dog\n  * Dog's name",
+              "description": "Includes:\n  * Email address used to register the dog\n  * Dog's name",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -996,8 +1001,12 @@
             },
             "vertices": [
               {
-                "x": 840,
-                "y": -330
+                "x": 850,
+                "y": -320
+              },
+              {
+                "x": 800,
+                "y": -360
               }
             ]
           },
@@ -1022,7 +1031,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Dog tag ID",
-              "description": "Returns the dog tag ID from the dog name.",
+              "description": "Includes:\n  * Dog tag ID\n",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -1070,7 +1079,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Email address",
-              "description": "Dog owner's email address",
+              "description": "Includes:\n   * Dog owner's email address\n",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -1118,7 +1127,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Dog status",
-              "description": "Found dog tag ID and found status.",
+              "description": "Includes:\n   * Dogs new Status : FOUND\n   * Dog tag ID",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -1215,7 +1224,7 @@
             },
             "vertices": [
               {
-                "x": 740,
+                "x": 650,
                 "y": -230
               }
             ]
@@ -1241,7 +1250,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Dog registration termination \nconfirmation email",
-              "description": "Includes:\n   * Dog owner's email address\n   * Termination confirmation message",
+              "description": "Includes:\n   * Dog owner's email address\n   * Termination confirmation message\n   * dog’s registration link",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -1291,6 +1300,10 @@
             "vertices": [
               {
                 "x": 810,
+                "y": -180
+              },
+              {
+                "x": 690,
                 "y": -180
               }
             ]
@@ -1549,7 +1562,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Dog status",
-              "description": "Passes the new \"lost\" dog status.",
+              "description": "Includes:\n  * Email address used to register the dog\n  * Dog's name\n  * Dog's new status: LOST",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -1597,7 +1610,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "Email address",
-              "description": "",
+              "description": "Includes:\n  * Dog owners email address",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -1779,7 +1792,7 @@
             },
             "vertices": [
               {
-                "x": 720,
+                "x": 660,
                 "y": 220
               }
             ]
@@ -1805,7 +1818,7 @@
             "data": {
               "type": "tm.Flow",
               "name": "New dog \ntag",
-              "description": "Dog tag sent to owner",
+              "description": "Includes:\n  * Dog owners postal address\n  * Renewed dog tag  ID",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "hasOpenThreats": false,
@@ -1854,6 +1867,10 @@
             },
             "vertices": [
               {
+                "x": 630,
+                "y": 300
+              },
+              {
                 "x": 600,
                 "y": 280
               }
@@ -1870,7 +1887,7 @@
                 "sourceMarker": {
                   "name": ""
                 },
-                "strokeDasharray": null
+                "strokeDasharray": "4 3"
               }
             },
             "width": 200,
@@ -1880,9 +1897,9 @@
             "data": {
               "type": "tm.Flow",
               "name": "Payment details",
-              "description": "Includes registration numbers as reference",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
+              "description": "Includes:\n- Banking details\n  * Account Name \n  * Account Number\n  * Registration Number",
+              "outOfScope": true,
+              "reasonOutOfScope": "Not in control of the application. because the application is not providing any payment method.",
               "hasOpenThreats": false,
               "isBidirectional": false,
               "isEncrypted": false,
@@ -1927,7 +1944,12 @@
             "target": {
               "cell": "d87e97b6-3ef7-4c08-a987-1d037df724e1"
             },
-            "vertices": []
+            "vertices": [
+              {
+                "x": 333.75,
+                "y": 420
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -2006,6 +2028,10 @@
               {
                 "x": 560,
                 "y": 90
+              },
+              {
+                "x": 650,
+                "y": 110
               }
             ]
           },
@@ -2108,6 +2134,54 @@
               {
                 "x": 770,
                 "y": -260
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Found dog confirmation ",
+              "description": "Includes:\n  * Dog tag ID\n  * Found location",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "id": "f0df7673-eeb2-461e-a2eb-231a1ba42305",
+            "source": {
+              "cell": "110fb507-6804-4ea7-8c4a-2e525a224b4e"
+            },
+            "target": {
+              "cell": "fbe1641b-f653-4ec8-a007-8fcb871fbe56"
+            },
+            "labels": [
+              "Found dog confirmation "
+            ],
+            "vertices": [
+              {
+                "x": 760,
+                "y": -300
               }
             ]
           },
