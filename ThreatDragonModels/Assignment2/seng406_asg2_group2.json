@@ -2513,7 +2513,7 @@
                   "status": "Open",
                   "severity": "Medium",
                   "type": "Spoofing",
-                  "description": "An attacker could repeatedly enter a tag ID, causing the system to spam the tag owner's email. Can lead to Denial of Service. ",
+                  "description": "A dog owner could use someone else's information (email and dog tag ID) to renew the registration of a dog that is not theirs. ",
                   "mitigation": "",
                   "modelType": "STRIDE",
                   "new": false,
