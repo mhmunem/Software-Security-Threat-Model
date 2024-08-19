@@ -14,6 +14,12 @@ Reviewer: Morgan English
 
 Doc: [Google Docs](https://docs.google.com/document/d/1W-bBLjRRvqJhG1ZdiYmg6vr-C4ri-5ngK66otZvr2jM/edit?usp=sharing)  
 
+Report: To generate the load to the [json file](ThreatDragonModels/Assignment2/seng406_asg2_group2.json) to [Threat Dragon](https://www.threatdragon.com/#/dashboard)
+
+PDF: [Final report](ThreatDragonModels/Assignment2/seng406_asg2_group2.pdf)
+
+
+
 # Original System Data Flow Diagram
 ![original-system](img/original-system.png)
 
