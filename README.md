@@ -14,8 +14,8 @@ Reviewer: Morgan English
 
 Doc: [Google Docs](https://docs.google.com/document/d/1W-bBLjRRvqJhG1ZdiYmg6vr-C4ri-5ngK66otZvr2jM/edit?usp=sharing)  
 
-# Original System
+# Original System Data Flow Diagram
 ![original-system](img/original-system.png)
 
-# Improved System
+# Improved System Data Flow Diagram
 ![improved-system](img/improved-system.png)
